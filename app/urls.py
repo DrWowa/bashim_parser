@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.contrib import admin
 
-from .views import BashImListView
+from .views import BashImListView, BashImFetchView
 
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', BashImListView.as_view(), name='bash_list'),
+    url(r'^fetch/$', BashImFetchView.as_view(), name='bash_fetch'),
 ]
 
 if settings.DEBUG:

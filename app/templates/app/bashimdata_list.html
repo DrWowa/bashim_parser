@@ -5,12 +5,13 @@
 
 {% block content %}
 <h1>Последние сохраненные цитаты с bash.im</h1>
+<a href="{% url 'bash_fetch' %}" class="btn btn-primary">Обновить</a><hr>
 {% if bashimdata_list %}
-<table>
+<table class="table table-hover">
     {% for cite in bashimdata_list %}
-    <tr class="table table-hover">
+    <tr>
         <td>{{ cite.number }}</td>
-        <td>{{ cite.text }}</td>
+        <td>{{ cite.text|safe }}</td>
     </tr>
     {% endfor %}
 </table>
