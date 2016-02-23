@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'app',
     # third
     'bootstrap3',
-    'sorl.thumbnail',
 )
 
 if DEBUG:
@@ -85,11 +84,8 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': 'prog3',
-        'PASSWORD': 'orfun',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'bashim.db',
     }
 }
 
