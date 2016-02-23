@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load bootstrap3 %}
+
+{% block head_title %}Цитаты bash.im{% endblock %}
+
+{% block content %}
+<h1>Последние сохраненные цитаты с bash.im</h1>
+{% if bashimdata_list %}
+<table>
+    {% for cite in bashimdata_list %}
+    <tr class="table table-hover">
+        <td>{{ cite.number }}</td>
+        <td>{{ cite.text }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% if is_paginated %}{% bootstrap_pagination page_obj %}{% endif %}
+{% endif %}
+{% endblock %}
